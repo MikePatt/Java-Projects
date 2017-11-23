@@ -1,0 +1,15 @@
+?1. Write a Java program by using three for loops to print the following pattern:
+
+1******
+
+12*****
+
+123****
+
+1234***
+
+12345**
+
+123456*
+
+1234567

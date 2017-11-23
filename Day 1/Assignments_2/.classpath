@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Datatypes_operators"/>
+	<classpathentry kind="src" path="FinancialPayRolApp"/>
+	<classpathentry kind="src" path="FlowControlsPatterns"/>
+	<classpathentry kind="src" path="Programs"/>
+	<classpathentry kind="src" path="Loop statements"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
