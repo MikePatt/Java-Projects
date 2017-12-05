@@ -33,4 +33,13 @@ public class Faculty extends Employee
 	{
 		this.rank = rank;
 	}
+	
+	public void setPhoneNumber(String phoneNumber) throws NotPhoneStringException
+	{
+		if(!phoneNumber.matches("[0-9]{10,11}"))
+		{
+			throw new NotPhoneStringException("Not a proper phone number");
+		}
+		this.setPhoneNumber(phoneNumber);
+	}
 }

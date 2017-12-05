@@ -1,0 +1,4 @@
+Exception Handling
+
+(NumberFormatException) create a method called binaryToDecimal(String binaryString) method, which converts a
+binary string into a decimal number. Implement the binaryToDecimal method to throw a NumberFormatException if the string is not a binary string.

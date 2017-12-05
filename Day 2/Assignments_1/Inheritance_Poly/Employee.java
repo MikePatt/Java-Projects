@@ -18,6 +18,15 @@ public class Employee extends Person
 		this.dateHired = new Date();
 	}
 	
+	public void setPhoneNumber(String phoneNumber) throws ImproperStringFormatException
+	{
+		if(!phoneNumber.matches("[0-9]{10,11}"))
+		{
+			throw new ImproperStringFormatException("The string is improper");
+		}
+		this.setPhoneNumber(phoneNumber);
+	}
+	
 	public Address getOffice()
 	{
 		return office;

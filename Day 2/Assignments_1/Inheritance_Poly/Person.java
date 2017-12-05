@@ -4,10 +4,10 @@ import Constructors.Address;
 
 public class Person 
 {	
-	String name;
-	Address streetAddress;
-	String phoneNumber;
-	String emailAddress;
+	private String name;
+	private Address streetAddress;
+	private String phoneNumber;
+	private String emailAddress;
 	
 	public String toString()
 	{
@@ -15,11 +15,24 @@ public class Person
 		return result;
 	}
 	
-	public Person(String name, Address address, String phoneNumber, String emailAddress)
+	public Person(String name, Address address, String phoneNumber, String emailAddress) throws IllegalArgumentException
 	{
+		if(!phoneNumber.matches("\\d{10,11}"))
+		{
+			throw new IllegalArgumentException("The number is invalid");
+		}
 		this.name = name;
 		this.streetAddress = address;
 		this.phoneNumber = phoneNumber;
 		this.emailAddress = emailAddress;
+	}
+	
+	public void setPhoneNumber(String number) throws IllegalArgumentException
+	{
+		if(!number.matches("[0-9]{10,11}"))
+		{
+			throw new IllegalArgumentException("The argument is illegal");
+		}
+		this.phoneNumber = number;
 	}
 }

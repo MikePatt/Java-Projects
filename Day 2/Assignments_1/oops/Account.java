@@ -2,6 +2,8 @@ package oops;
 import java.util.Date;
 import java.util.Scanner;
 import java.util.regex.Pattern;
+import exceptions.*;
+
 public abstract class Account 
 {
 	private int id;
@@ -69,18 +71,22 @@ public abstract class Account
 		this.annualInterestRate = annualInterestRate;
 	}
 	
-	public void withdraw(double amount) throws IllegalArgumentException
+	public void withdraw(double amount) throws IllegalArgumentException, InsufficientFundsException
 	{
 		if(amount < 0)
 			throw new IllegalArgumentException("Amount must be positive");
-		else
+		else if(amount == 0)
+			throw new ZeroAsArgumentException();
+		else if(balance >= amount)
 			balance -= amount;
+		else
+			throw new InsufficientFundsException(balance - amount);
 	}
 	
-	public void withdraw(Scanner scan)
+	public void withdraw(Scanner scan) throws IllegalArgumentException, InsufficientFundsException
 	{
 		Pattern userInputDouble = Pattern.compile("[0-9]+(\\.[0-9]{1,2})?");
-		System.out.println("How much do you wish to withdraw:  ");
+		System.out.println("How much do you wish to withdraw: ");
 		while (!scan.hasNext(userInputDouble))
 		{
 			if(scan.hasNext())
